@@ -1,0 +1,28 @@
+name: Tibber Smart Control
+slug: tibber_smart_control
+version: "0.1.0"
+description: Prisbaserad styrning av Home Assistant-switchar med Tibber
+url: https://github.com/pellethylander-hub/tibber-smart-control
+arch:
+  - amd64
+  - aarch64
+startup: application
+boot: auto
+init: false
+homeassistant_api: true
+hassio_api: true
+hassio_role: default
+map:
+  - addon_config:rw
+options:
+  tibber_token: ""
+  admin_password: ""
+  family_password: ""
+schema:
+  tibber_token: password
+  admin_password: password
+  family_password: password
+ports:
+  8099/tcp: 8099
+ports_description:
+  8099/tcp: Lokal webbpanel (HTTP, exponera inte direkt mot internet)
